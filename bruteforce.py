@@ -1,28 +1,19 @@
-import re
+#import re
+from itertools import permutations
 
-#Recursive brute force method
-def brute_force_search(graph):
+#Brute force method
+def brute_force_search(graph, graphSize):
+	tours = []
 
-	return bestLength
+	for tour in permutations(range(1,graphSize+1), graphSize): 
+		tours.append(tour)
 
-#File reading method
-#Takes filename and extracts graph
-def read_graph(graphFile):
-	inputFile = open('%s' % graphFile, 'r')
-	fileName = str(inputFile.readline()).split('=')[1]
-	graphSize = str(inputFile.readline()).split('=')[1]
-	graph = str(inputFile.readlines())
-	#graph = re.findall(r"[\w']+", graph)
-	#graph.join()
-	#graph = graph.split("'")
-	#print (fileName)
-	print (fileName)
-	#print (graphSize)
-	print (graphSize)
-	#print (graph)
-	print (graph)
+	print ('Tours: ')
+	print (tours)
 
-    #return graph
+	#Find the best tour
+	#for i in range(len(tours)): 
+	#	pass
 
-#brute_force_search(read_graph("AISearchtestcase.txt"))
-read_graph('AISearchtestcase.txt')
+	#Return the best tour
+	#return bestTour
