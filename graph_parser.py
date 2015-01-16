@@ -1,7 +1,7 @@
 import re
 
 def parse(fileName):
-	readFile = file(fileName, 'r')
+	readFile = open(fileName, 'r')
 	fileString = ""
 	for line in readFile:
 		fileString = fileString + str(line)
