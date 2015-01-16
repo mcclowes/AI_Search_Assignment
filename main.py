@@ -5,8 +5,10 @@ from graph_tools import *
 
 print ('Parsing '+name+'.txt')
 
-print(matrix)
+print_graph(matrix)
 
 bruteForceTour = brute_force_search(matrix, size)
-print (tour_length(bruteForceTour))
-print (bruteForceTour)
+print ("Calculated length: " + str(tour_length(bruteForceTour,matrix)))
+#print ("Brute force tour length: "+ str(bruteForceTour))
+
+#Create UI methods
