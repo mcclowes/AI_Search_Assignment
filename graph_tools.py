@@ -36,4 +36,6 @@ def parse(fileName):
 
 	return (name, size, matrix)
 
-parse ('AISearchtestcase.txt')
+def tour_length(tour):
+
+	return

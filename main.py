@@ -1,5 +1,5 @@
 from bruteforce import brute_force_search
-from graph_parser import parse
+from graph_tools import *
 
 (name, size, matrix) = parse('AISearchtestcase.txt')
 
@@ -7,4 +7,6 @@ print ('Parsing '+name+'.txt')
 
 print(matrix)
 
-brute_force_search(matrix, size)
+bruteForceTour = brute_force_search(matrix, size)
+print (tour_length(bruteForceTour))
+print (bruteForceTour)
