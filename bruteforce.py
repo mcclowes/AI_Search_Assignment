@@ -3,10 +3,7 @@ from itertools import permutations
 
 #Brute force method
 def brute_force_search(graph, graphSize):
-	tours = []
-
-	for tour in permutations(range(1,graphSize+1), graphSize): 
-		tours.append(tour)
+	tours = list(permutations(range(1,graphSize+1), graphSize))
 
 	print ('Tours: ')
 	print (tours)
