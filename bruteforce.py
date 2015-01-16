@@ -18,5 +18,4 @@ def brute_force_search(graph, graphSize):
 			bestTourLength = tourLength
 
 	#Return best tour length and the tour
-	return tours[bestTour]
-	#return bestTourLength
+	return (tours[bestTour], bestTourLength)
