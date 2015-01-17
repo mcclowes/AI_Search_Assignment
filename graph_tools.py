@@ -10,14 +10,14 @@ def parse(fileName):
 
 	name = elements[0]
 	if re.match("NAME=.+", name):
-		print ("name is ok")
+		#print ("name is ok")
 		name = name[5:]
 	else:
 		print ("name is in-correctly formatted")
 
 	size = elements[1]
 	if re.match("SIZE=\d+", size):
-		print ("size is ok")
+		#print ("size is ok")
 		size = int(size[5:])
 	else:
 		print ("size is in-correctly formatted")

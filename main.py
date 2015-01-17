@@ -1,4 +1,5 @@
 from brute_force import brute_force_search
+from nearest_neighbour import nearest_neighbour_search
 from graph_tools import *
 
 def test_brute_force(graph, graphSize):
@@ -17,16 +18,15 @@ def test_genetic(graph, graphSize):
 def output_tour(name, size, bestTour, bestTourLength):
 	with open(str("tour" + name + ".txt"), "w") as tourFile:
 		tourFile.write("NAME = " + name + ",\n")
-		tourFile.write("TOURSIZE = " + size + ",\n")
-		tourFile.write("LENGTH = " + bestTourLength + ",\n")
-		tourFile.write(", ".join(bestTour))
+		tourFile.write("TOURSIZE = " + str(size) + ",\n")
+		tourFile.write("LENGTH = " + str(bestTourLength) + ",\n")
+		tourFile.write(str(bestTour).strip('()'))
 
-#Main
 #Parse graph
 (name, size, graph) = parse('AISearchtestcase.txt')
 #(name, size, graph) = parse('AISearchfile012.txt')
 print ('Parsing '+name+'.txt')
-print_graph(graph)
+print_graph(graph) #Can remove
 
 test_brute_force(graph, size)
 #test_nearest_neightbour(graph, size)
