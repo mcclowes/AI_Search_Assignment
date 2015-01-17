@@ -7,6 +7,9 @@ def brute_force_search(graph, graphSize):
 	bestTourLength = tour_length(range(1,graphSize+1), graph)
 	bestTour = 0
 
+	#Put timing stuff in
+	#Start time - n seconds cap
+
 	#Find the best tour
 	for tour in permutations(range(1,graphSize+1), graphSize):
 		tourLength = tour_length(tour, graph)
