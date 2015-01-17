@@ -3,16 +3,19 @@ from graph_tools import tour_length
 
 #Brute force method
 def brute_force_search(graph, graphSize):
+	#Generate all permutations of tours
+	tours = list(permutations(range(1,graphSize+1), graphSize))
+
 	#Assign starting variables
 	bestTourLength = 9999999999 #Replace this!!!!
 	bestTour = 0
 
-	#Find the best tour #Generate all permutations of tours
-	for tour in permutations(range(1,graphSize+1), graphSize):
-		tourLength = tour_length(tour, graph)
+	#Find the best tour
+	for i in range(len(tours)): 
+		tourLength = tour_length(tours[i], graph)
 		if  tourLength < bestTourLength:
-			bestTour = tour
+			bestTour = i
 			bestTourLength = tourLength
 
 	#Return best tour length and the tour
-	return (bestTour, bestTourLength)
+	return (tours[bestTour], bestTourLength)
