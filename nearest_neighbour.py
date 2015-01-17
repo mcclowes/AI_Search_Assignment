@@ -31,10 +31,10 @@ def search_from_start(graph1, graphSize, tour):
 
 	#Check for shortest dist to next node
 	for i in range(graphSize):
-		#print ("Tour: "+str(tour) + " Dist: " + str(graph[tour[-1]-1][i]))
+		#if last node --> newnode is the best and
 		if (graph[tour[-1]-1][i] < minDist) & (graph[tour[-1]-1][i] != -1):
-			#print("Next node --> " + str(bestNode+1))
 			bestNode = i+1
+			minDist = graph[tour[-1]-1][i]
 
 	#If no more nodes to travel too
 	if (bestNode == 0) or (len(tour) == graphSize):

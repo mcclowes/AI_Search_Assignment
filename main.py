@@ -24,13 +24,13 @@ def output_tour(name, size, bestTour, bestTourLength):
 
 #Parse graph
 #(name, size, graph) = parse('AISearchtestcase.txt')
-(name, size, graph) = parse('AISearchfile017.txt')
+(name, size, graph) = parse('AISearchfile535.txt')
 print ('Parsing '+name+'.txt')
 print_graph(graph) #Can remove
 
 #test_brute_force(graph, size)
-#test_nearest_neightbour(graph, size)
-test_genetic(graph, size)
-print ("Calculation completed.")
+test_nearest_neightbour(graph, size)
+#test_genetic(graph, size)
+print ("Search completed.")
 
 #Create UI methods
