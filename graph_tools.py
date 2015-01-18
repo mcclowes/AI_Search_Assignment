@@ -10,17 +10,15 @@ def parse(fileName):
 
 	name = elements[0]
 	if re.match("NAME=.+", name):
-		#print ("name is ok")
 		name = name[5:]
 	else:
-		print ("name is in-correctly formatted")
+		print ("Error: Name cannot be read")
 
 	size = elements[1]
 	if re.match("SIZE=\d+", size):
-		#print ("size is ok")
 		size = int(size[5:])
 	else:
-		print ("size is in-correctly formatted")
+		print ("Error: Size cannot be read")
 
 	elements = elements[2:]
 	for elem in enumerate(elements):
@@ -43,11 +41,9 @@ def print_graph(graph):
 
 #Calculates the length of a given tour
 def tour_length(tour, graph):
-	tourLength = 0
+	tourLength = graph[tour[-1]-1][tour[0]-1] #Initialise with last -> first edge
 	for i in range(len(tour)-1):
-		tourLength = tourLength + graph[tour[i]-1][ tour[i+1]-1]
-	tourLength = tourLength + graph[tour[-1]-1][tour[0]-1]
-	
+		tourLength = tourLength + graph[tour[i]-1][ tour[i+1]-1] #Sum rest of edges
 	return tourLength
 
 def minimum_spanning_tree(graph):
