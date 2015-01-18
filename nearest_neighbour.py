@@ -18,9 +18,9 @@ def nearest_neighbour_search(graph, graphSize):
 	return (bestTour, bestTourLength)
 
 #Recursive nearest neighbour search method, recurses from given start to end
-def search_from_start(graph1, graphSize, tour):
+def search_from_start(inputGraph, graphSize, tour):
 	graph = [] #Copy the graph
-	for subList in graph1:
+	for subList in inputGraph:
 		graph.append(subList[:])
 	minDist = 99999999999
 	bestNode = 0
