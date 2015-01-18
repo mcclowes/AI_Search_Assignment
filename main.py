@@ -24,7 +24,7 @@ def output_tour(name, size, bestTour, bestTourLength):
 
 #Parse graph
 #(name, size, graph) = parse('AISearchtestcase.txt')
-(name, size, graph) = parse('AISearchfile535.txt')
+(name, size, graph) = parse('AISearchfile048.txt')
 print ('Parsing '+name+'.txt')
 print_graph(graph) #Can remove
 
