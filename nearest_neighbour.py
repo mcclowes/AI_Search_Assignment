@@ -1,7 +1,7 @@
 from itertools import permutations
 from graph_tools import tour_length
 
-#Brute force method
+#Root method, runs nearest neighbour search starting from each node
 def nearest_neighbour_search(graph, graphSize):
 	bestTourLength = 9999999999 #Replace this?
 	bestTour = 0
@@ -17,6 +17,7 @@ def nearest_neighbour_search(graph, graphSize):
 
 	return (bestTour, bestTourLength)
 
+#Recursive nearest neighbour search method, recurses from given start to end
 def search_from_start(graph1, graphSize, tour):
 	graph = [] #Copy the graph
 	for subList in graph1:
@@ -27,8 +28,7 @@ def search_from_start(graph1, graphSize, tour):
 	for i in range(graphSize): #Mark last added node as visited
 		graph[i][tour[-1]-1] = -1
 
-	#Check for shortest dist to next node
-	for i in range(graphSize):
+	for i in range(graphSize): #Check for shortest dist to next node
 		if (graph[tour[-1]-1][i] < minDist) & (graph[tour[-1]-1][i] != -1): #If last node --> newnode is the best and
 			bestNode = i+1
 			minDist = graph[tour[-1]-1][i]
