@@ -1,5 +1,6 @@
 from itertools import permutations
-from graph_tools import tour_length
+from graph_tools import tour_length, lower_bound
+#from graph_tools import lowest_bound
 
 #Root method, runs nearest neighbour search starting from each node
 def nearest_neighbour_search(graph, graphSize):
@@ -7,6 +8,7 @@ def nearest_neighbour_search(graph, graphSize):
 	bestTour = 0
 	tours = []
 	tourLength = 0
+	lowerBound = lower_bound(graph, graphSize)
 
 	for i in range(1, graphSize+1):
 		tours.append(search_from_start(graph, graphSize, [i]))
@@ -14,6 +16,8 @@ def nearest_neighbour_search(graph, graphSize):
 		if tourLength < bestTourLength:
 			bestTourLength = tourLength
 			bestTour = tours[i-1]
+			if bestTourLength == lowerBound:
+				break
 
 	return (bestTour, bestTourLength)
 

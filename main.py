@@ -36,9 +36,10 @@ def output_tour(name, size, bestTour, bestTourLength):
 #(name, size, graph) = parse('AISearchfile012.txt')
 print ('Parsing '+name+'.txt')
 
-#test_brute_force(graph, size)
-test_modified_brute_force(graph, size)
-#test_nearest_neightbour(graph, size)
+#print (lower_bound(graph, size))
+
+#test_modified_brute_force(graph, size)
+test_nearest_neightbour(graph, size)
 #test_genetic(graph, size)
 print ("Search completed")
 

@@ -47,16 +47,44 @@ def tour_length(tour, graph):
 	return tourLength
 
 #Calculates the lower bound for a given graph
-def lower_bound(inputGraph):
+def lower_bound(inputGraph, graphSize):
 	graph = [] #Copy the graph
 	for subList in inputGraph:
 		graph.append(subList[:])
-	#Remove first node
 
-	#Generate minimum spanning tree
+	#Remove first node from graph completely
+	for i in range(graphSize):
+		graph[0][i] = -1
+		graph[i][0] = -1
 
-	#Re-add first node
+	#Generate minimum spanning tree of graph - node 1
+	mst = []
+	while len(mst) != graphSize-2:
+		minLen = 99999999
+		minNode = -1
+		for i in range(1,graphSize):
+			for j in range (i+1,graphSize):
+				if (graph[i][j] < minLen) & (graph[i][j] != -1):
+					minLen = graph[i][j]
+					minNode = j
+		mst.append(minLen)
+		for i in range(graphSize):
+			graph[i][minNode] = -1
 
-	#return lowerBound
+	lowerBound = sum(mst)
+
+	#Add first node by two edges
+	lowest1 = 99999999
+	lowest2 = 99999999
+	for i in range(graphSize):
+		edge = inputGraph[0][i]
+		if (edge < lowest1) & (edge != -1):
+			lowest2 = lowest1
+			lowest1 = edge
+		elif (edge < lowest2) & (edge != -1):
+			lowest2 = edge
+	lowerBound = lowerBound + lowest1 + lowest2
+
+	return lowerBound
 
      
