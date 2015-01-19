@@ -32,14 +32,14 @@ def output_tour(name, size, bestTour, bestTourLength):
 		tourFile.write("LENGTH = " + str(bestTourLength) + ",\n")
 		tourFile.write(bestTour)
 
-(name, size, graph) = parse('AISearchtestcase.txt') #Parse graph
-#(name, size, graph) = parse('AISearchfile012.txt')
+#(name, size, graph) = parse('AISearchtestcase.txt') #Parse graph
+(name, size, graph) = parse('AISearchfile021.txt')
 print ('Parsing '+name+'.txt')
 
 #print (lower_bound(graph, size))
 
-#test_modified_brute_force(graph, size)
-test_nearest_neightbour(graph, size)
+test_modified_brute_force(graph, size)
+#test_nearest_neightbour(graph, size)
 #test_genetic(graph, size)
 print ("Search completed")
 
