@@ -34,11 +34,6 @@ def parse(fileName):
 
 	return (name, size,	graph)
 
-#Prints graph line-by-line
-def print_graph(graph):
-	for item in graph:
-		print (item)
-
 #Calculates the length of a given tour
 def tour_length(tour, graph):
 	tourLength = graph[tour[-1]-1][tour[0]-1] #Initialise with last -> first edge
@@ -79,12 +74,9 @@ def lower_bound(inputGraph, graphSize):
 	for i in range(graphSize):
 		edge = inputGraph[0][i]
 		if (edge < lowest1) & (edge != -1):
-			lowest2 = lowest1
-			lowest1 = edge
+			lowest2, lowest1 = lowest1, edge
 		elif (edge < lowest2) & (edge != -1):
 			lowest2 = edge
 	lowerBound = lowerBound + lowest1 + lowest2
 
-	return lowerBound
-
-     
+	return lowerBound     

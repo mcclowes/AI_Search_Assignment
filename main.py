@@ -12,7 +12,7 @@ def test_brute_force(graph, graphSize):
 def test_modified_brute_force(graph, graphSize):
 	print ("Running Modified Brute Force Search...")
 	(bruteForceTour, bruteForceTourLength) = modified_brute_force_search(graph, graphSize)
-	output_tour(name, size, str(bruteForceTour).strip('()'), bruteForceTourLength)
+	output_tour(name, size, str(bruteForceTour).strip('[]'), bruteForceTourLength)
 
 def test_nearest_neightbour(graph, graphSize):
 	print ("Running Nearest Neighbour Search...")
@@ -21,8 +21,7 @@ def test_nearest_neightbour(graph, graphSize):
 
 def test_genetic(graph, graphSize):
 	print ("Running Genetic Search...")
-	(geneticTour, geneticTourLength, generationNumber) = brute_force_search(graph, graphSize)
-	print (str(generationNumber) + " generations.")
+	(geneticTour, geneticTourLength) = genetic_search(graph, graphSize)
 	output_tour(name, size, str(geneticTour).strip('[]'), geneticTourLength)
 
 def output_tour(name, size, bestTour, bestTourLength):
@@ -33,14 +32,48 @@ def output_tour(name, size, bestTour, bestTourLength):
 		tourFile.write(bestTour)
 
 #(name, size, graph) = parse('AISearchtestcase.txt') #Parse graph
-(name, size, graph) = parse('AISearchfile021.txt')
+(name, size, graph) = parse('AISearchfile012.txt')
 print ('Parsing '+name+'.txt')
-
-#print (lower_bound(graph, size))
-
-test_modified_brute_force(graph, size)
+#test_modified_brute_force(graph, size)
 #test_nearest_neightbour(graph, size)
-#test_genetic(graph, size)
+test_genetic(graph, size)
+
+#(name, size, graph) = parse('AISearchfile017.txt')
+#print ('Parsing '+name+'.txt')
+#test_modified_brute_force(graph, size)
+
+#(name, size, graph) = parse('AISearchfile021.txt')
+#print ('Parsing '+name+'.txt')
+#test_modified_brute_force(graph, size)
+
+#(name, size, graph) = parse('AISearchfile026.txt')
+#print ('Parsing '+name+'.txt')
+#test_modified_brute_force(graph, size)
+
+#(name, size, graph) = parse('AISearchfile042.txt')
+#print ('Parsing '+name+'.txt')
+#test_modified_brute_force(graph, size)
+
+#(name, size, graph) = parse('AISearchfile048.txt')
+#print ('Parsing '+name+'.txt')
+#test_modified_brute_force(graph, size)
+
+#(name, size, graph) = parse('AISearchfile058.txt')
+#print ('Parsing '+name+'.txt')
+#test_modified_brute_force(graph, size)
+
+#(name, size, graph) = parse('AISearchfile175.txt')
+#print ('Parsing '+name+'.txt')
+#test_modified_brute_force(graph, size)
+
+#(name, size, graph) = parse('AISearchfile180.txt')
+#print ('Parsing '+name+'.txt')
+#test_modified_brute_force(graph, size)
+
+#(name, size, graph) = parse('AISearchfile535.txt')
+#print ('Parsing '+name+'.txt')
+#test_modified_brute_force(graph, size)
+
 print ("Search completed")
 
 #Print list of commands

@@ -1,25 +1,22 @@
 from itertools import permutations
 from graph_tools import tour_length, lower_bound
-#from graph_tools import lowest_bound
 
 #Root method, runs nearest neighbour search starting from each node
 def nearest_neighbour_search(graph, graphSize):
 	bestTourLength = 9999999999 #Replace this?
 	bestTour = 0
 	tours = []
-	tourLength = 0
 	lowerBound = lower_bound(graph, graphSize)
 
-	for i in range(1, graphSize+1):
+	for i in range(1, graphSize+1): #For each start node
 		tours.append(search_from_start(graph, graphSize, [i]))
 		tourLength = tour_length(tours[i-1], graph)
 		if tourLength < bestTourLength:
-			bestTourLength = tourLength
-			bestTour = tours[i-1]
+			bestTour, bestTourLength = tours[i-1], tourLength
 			if bestTourLength == lowerBound:
 				break
-
-	return (bestTour, bestTourLength)
+	bestTour = tour_improve(bestTour, graph)
+	return (bestTour, tour_length(bestTour, graph))
 
 #Recursive nearest neighbour search method, recurses from given start to end
 def search_from_start(inputGraph, graphSize, tour):
@@ -44,3 +41,14 @@ def search_from_start(inputGraph, graphSize, tour):
 	search_from_start(graph, graphSize, tour) #Recurse
 
 	return tour
+
+##Tour Improvement Algorithm
+def tour_improve(tour, graph):
+	bestTour = list(tour)
+	for i in range(len(bestTour)-1):
+		tempTour= list(bestTour)
+		tempTour[i], tempTour [i+1] = bestTour[i+1], bestTour[i]
+		if (tour_length(tempTour, graph) < tour_length(bestTour, graph)):
+			bestTour = list(tempTour)
+	return bestTour
+
