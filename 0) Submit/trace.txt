@@ -1,0 +1,59 @@
+Fri 01/23/15  12:13:27 PM
+
+directory: pvxf29 ...
+TourfileA...
+AISearchfile012.txt: good (length of tour is 66)
+AISearchfile017.txt: good (length of tour is 2307)
+AISearchfile021.txt: good (length of tour is 4230)
+AISearchfile026.txt: good (length of tour is 1904)
+AISearchfile042.txt: good (length of tour is 2159)
+AISearchfile048.txt: good (length of tour is 34043)
+AISearchfile058.txt: good (length of tour is 89561)
+AISearchfile175.txt: good (length of tour is 44400)
+AISearchfile180.txt: good (length of tour is 665350)
+AISearchfile535.txt: good (length of tour is 148123)
+TourfileB...
+AISearchfile012.txt: good (length of tour is 56)
+AISearchfile017.txt: good (length of tour is 1628)
+AISearchfile021.txt: good (length of tour is 3130)
+AISearchfile026.txt: good (length of tour is 1731)
+AISearchfile042.txt: good (length of tour is 1534)
+AISearchfile048.txt: good (length of tour is 15172)
+AISearchfile058.txt: good (length of tour is 27208)
+AISearchfile175.txt: good (length of tour is 21951)
+AISearchfile180.txt: good (length of tour is 5420)
+AISearchfile535.txt: good (length of tour is 50029)
+TourfileC...
+AISearchfile012.txt: good (length of tour is 56)
+AISearchfile017.txt: good (length of tour is 1564)
+AISearchfile021.txt: good (length of tour is 2754)
+AISearchfile026.txt: good (length of tour is 1664)
+AISearchfile042.txt: good (length of tour is 1408)
+AISearchfile048.txt: good (length of tour is 15509)
+AISearchfile058.txt: good (length of tour is 27208)
+AISearchfile175.txt: good (length of tour is 22296)
+AISearchfile180.txt: good (length of tour is 8890)
+AISearchfile535.txt: good (length of tour is 50270)
+
+Best tours:
+
+AISearchfile012.txt: best tour has length 56
+AISearchfile012.txt winners : pvxf29
+AISearchfile017.txt: best tour has length 1564
+AISearchfile017.txt winners : pvxf29
+AISearchfile021.txt: best tour has length 2754
+AISearchfile021.txt winners : pvxf29
+AISearchfile026.txt: best tour has length 1664
+AISearchfile026.txt winners : pvxf29
+AISearchfile042.txt: best tour has length 1408
+AISearchfile042.txt winners : pvxf29
+AISearchfile048.txt: best tour has length 15172
+AISearchfile048.txt winners : pvxf29
+AISearchfile058.txt: best tour has length 27208
+AISearchfile058.txt winners : pvxf29
+AISearchfile175.txt: best tour has length 21951
+AISearchfile175.txt winners : pvxf29
+AISearchfile180.txt: best tour has length 5420
+AISearchfile180.txt winners : pvxf29
+AISearchfile535.txt: best tour has length 50029
+AISearchfile535.txt winners : pvxf29
