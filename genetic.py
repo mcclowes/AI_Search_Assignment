@@ -8,7 +8,7 @@ def genetic_search(graph, graphSize):
 	#Step 1 : Create initial sorted population
 	population = sorted(gen_population(graphSize), key = lambda x: tour_length(x, graph))
 	startTime = datetime.now() #Start timer
-
+ 
 	while (((datetime.now() - startTime).total_seconds()) < (graphSize)): #Until timer reaches n seconds (n = graphSize)
 		print (population)
 		parent1 = []
