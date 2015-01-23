@@ -1,4 +1,4 @@
-Thu 01/22/15  01:48:11 PM
+Fri 01/23/15  01:06:46 AM
 
 directory: dcs0ias ...
 TourfileA...
@@ -24,71 +24,36 @@ AISearchfile175.txt: good (length of tour is 21951)
 AISearchfile180.txt: good (length of tour is 5420)
 AISearchfile535.txt: good (length of tour is 50029)
 TourfileC...
-AISearchfile012.txt: no tour-file present
-AISearchfile017.txt: no tour-file present
-AISearchfile021.txt: no tour-file present
-AISearchfile026.txt: no tour-file present
-AISearchfile042.txt: no tour-file present
-AISearchfile048.txt: no tour-file present
-AISearchfile058.txt: no tour-file present
-AISearchfile175.txt: no tour-file present
-AISearchfile180.txt: no tour-file present
-AISearchfile535.txt: no tour-file present
-
-directory: dcs0ias copy ...
-TourfileA...
-AISearchfile012.txt: good (length of tour is 66)
-AISearchfile017.txt: good (length of tour is 2307)
-AISearchfile021.txt: good (length of tour is 4230)
-AISearchfile026.txt: good (length of tour is 1904)
-AISearchfile042.txt: good (length of tour is 2159)
-AISearchfile048.txt: good (length of tour is 34043)
-AISearchfile058.txt: good (length of tour is 89561)
-AISearchfile175.txt: good (length of tour is 44400)
-AISearchfile180.txt: good (length of tour is 665350)
-AISearchfile535.txt: good (length of tour is 148123)
-TourfileB...
-AISearchfile012.txt: good (length of tour is 56)
-AISearchfile017.txt: good (length of tour is 1628)
-AISearchfile021.txt: good (length of tour is 3130)
-AISearchfile026.txt: good (length of tour is 1731)
-AISearchfile042.txt: good (length of tour is 1534)
-AISearchfile048.txt: good (length of tour is 15172)
-AISearchfile058.txt: good (length of tour is 27208)
-AISearchfile175.txt: good (length of tour is 21951)
-AISearchfile180.txt: good (length of tour is 5420)
-AISearchfile535.txt: good (length of tour is 50029)
-TourfileC...
-AISearchfile012.txt: no tour-file present
-AISearchfile017.txt: no tour-file present
-AISearchfile021.txt: no tour-file present
-AISearchfile026.txt: no tour-file present
-AISearchfile042.txt: no tour-file present
-AISearchfile048.txt: no tour-file present
-AISearchfile058.txt: no tour-file present
-AISearchfile175.txt: no tour-file present
-AISearchfile180.txt: no tour-file present
-AISearchfile535.txt: no tour-file present
+AISearchfile012.txt: good (length of tour is 99)
+AISearchfile017.txt: good (length of tour is 2372)
+AISearchfile021.txt: good (length of tour is 4845)
+AISearchfile026.txt: good (length of tour is 2132)
+AISearchfile042.txt: good (length of tour is 2087)
+AISearchfile048.txt: good (length of tour is 30286)
+AISearchfile058.txt: good (length of tour is 81996)
+AISearchfile175.txt: good (length of tour is 42986)
+AISearchfile180.txt: good (length of tour is 575650)
+AISearchfile535.txt: good (length of tour is 144474)
 
 Best tours:
 
 AISearchfile012.txt: best tour has length 56
-AISearchfile012.txt winners : dcs0ias, dcs0ias copy
+AISearchfile012.txt winners : dcs0ias
 AISearchfile017.txt: best tour has length 1628
-AISearchfile017.txt winners : dcs0ias, dcs0ias copy
+AISearchfile017.txt winners : dcs0ias
 AISearchfile021.txt: best tour has length 3130
-AISearchfile021.txt winners : dcs0ias, dcs0ias copy
+AISearchfile021.txt winners : dcs0ias
 AISearchfile026.txt: best tour has length 1731
-AISearchfile026.txt winners : dcs0ias, dcs0ias copy
+AISearchfile026.txt winners : dcs0ias
 AISearchfile042.txt: best tour has length 1534
-AISearchfile042.txt winners : dcs0ias, dcs0ias copy
+AISearchfile042.txt winners : dcs0ias
 AISearchfile048.txt: best tour has length 15172
-AISearchfile048.txt winners : dcs0ias, dcs0ias copy
+AISearchfile048.txt winners : dcs0ias
 AISearchfile058.txt: best tour has length 27208
-AISearchfile058.txt winners : dcs0ias, dcs0ias copy
+AISearchfile058.txt winners : dcs0ias
 AISearchfile175.txt: best tour has length 21951
-AISearchfile175.txt winners : dcs0ias, dcs0ias copy
+AISearchfile175.txt winners : dcs0ias
 AISearchfile180.txt: best tour has length 5420
-AISearchfile180.txt winners : dcs0ias, dcs0ias copy
+AISearchfile180.txt winners : dcs0ias
 AISearchfile535.txt: best tour has length 50029
-AISearchfile535.txt winners : dcs0ias, dcs0ias copy
+AISearchfile535.txt winners : dcs0ias

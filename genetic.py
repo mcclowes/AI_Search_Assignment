@@ -1,93 +1,108 @@
 from random import shuffle
-from random import randint
+from random import randint, randrange
 from graph_tools import tour_length
 from datetime import datetime
 
-#Genetic algorithm
+#Genetic algorithm main method
 def genetic_search(graph, graphSize):
 	#Step 1 : Create initial sorted population
-	population = sorted(gen_population(graphSize))
+	population = sorted(gen_population(graphSize), key = lambda x: tour_length(x, graph))
 	startTime = datetime.now() #Start timer
-	while (((datetime.now() - startTime).total_seconds()) < graphSize): #Until timer reaches n seconds (n = graphSize)
-		print ("loop")
+
+	while (((datetime.now() - startTime).total_seconds()) < (graphSize)): #Until timer reaches n seconds (n = graphSize)
+		print (population)
 		parent1 = []
 		parent2 = []
 		child1 = []
 		child2 = []
 		#Step 2 : Choose parents
-		print ("stuck here 1")
-		(parent1, parent2) = gen_parents(population, graphSize)
-		print ("stuck here 2")
-		print ("P1: " + str(parent1))
-		print ("P2: " + str(parent2))
+		while (parent2 == []) or (parent1 == []) or (parent2 == parent1):
+			#print ("eh")
+			parent1 = gen_parent(population, graphSize)
+			parent2 = gen_parent(population, graphSize)
+			print ("P1: " + str(parent1))
+			print ("P2: " + str(parent2))
 
 		#Step 3 : Crossover -> Create children
-		(child1, child2) = gen_children(parent1, parent2)
-
+		(child1, child2) = gen_children(parent1, parent2, graphSize)
+		#print("here")
 		#Step 4 : Mutate children
-		if (randint(1,2) <= 1):
-			print ("stuck here 3")
-			child1 = gen_mutation(child1)
-			child2 = gen_mutation(child2)
+		if (randint(1, 5) <= 1):
+			child1 = gen_mutation(child1, graph)
+		if (randint(1, 5) <= 1):
+			child2 = gen_mutation(child2, graph)
 
-		#Check child is bigger than worst population
-		#Step 5 : Reduce population
-		population = population[:-2]
-		#Step 6 : Add children to population
+		#Check child is bigger than worst population and add
+		population = population + [child1]
+		population = population + [child2]
 		print ("C1: " + str(child1))
-		print ("C2: " + str(child2))
+		print ("C2: " + str(child2) + "\n")
+		population = sorted(population, key = lambda x: tour_length(x, graph))
+		population = population[:graphSize]
+	#print ("Genetic produced -> " + str(population[0]))
+	return best_tour(population, graph)
 
-		population.append(child1)
-		population.append(child2)
-		population = sorted(population)
-
-	print ("Genetic produced -> " + str(population[0]))
-	return population[0]
-
+#Generate an initial tours population a given size
 def gen_population(graphSize):
 	population =[]
-	tour = range(1,graphSize+1)
+	tour = list(range(1,graphSize+1))
 	for i in range(graphSize):
 		shuffle(tour)
 		population.append(list(tour))
-	print (population)
 	return list(population)
 
-def gen_parents(population, graphSize):
-	parent1 = []
-	parent2 = []
-	print("this")
+#Selects a parent from population (weighted towards best)
+def gen_parent(population, graphSize):
+	parent = []
 	roll = randint(1,10)
+	#print (roll)
 	if (roll >= 1) & (roll <= 4): #first quarter
-		parent1 = population[randint(1,graphSize/4)]
-		while (parent2 == []) or (parent2 == parent1):
-			parent2 = population[randint(1,graphSize/4)]
+		pRoll = randint(0, int(graphSize/4))
 	elif (roll >= 5) & (roll <= 7): #second quarter
-		parent1 = population[randint(graphSize/4, (graphSize/4)*2)]
-		while (parent2 == []) or (parent2 == parent1):
-			parent2 = population[randint(graphSize/4, (graphSize/4)*2)]
+		pRoll = randint(int(graphSize/4), int(graphSize/4)*2)
 	elif (roll >= 7) & (roll <= 9): #third quarter
-		parent1 = population[randint((graphSize/4)*2, (graphSize/4)*3)]
-		while (parent2 == []) or (parent2 == parent1):
-			parent2 = population[randint((graphSize/4)*2, (graphSize/4)*3)]
+		pRoll = randint(int(graphSize/4)*2, int(graphSize/4)*3)
 	elif (roll == 10): #4th quarter
-		parent1 = population[randint((graphSize/4)*3,graphSize-1)]
-		while (parent2 == []) or (parent2 == parent1):
-			parent2 = population[randint((graphSize/4)*3,graphSize-1)]
+		pRoll = randint(int(graphSize/4)*3,graphSize-1)
 	else:
 		print("error")
-	print ('that')
-	return (parent1, parent2)
+	parent = population[pRoll]
+	#print ('Parent: ' + str(parent) + "from roll: " + str(pRoll))
 
-def gen_children(parent1, parent2):
-	child1 = parent1[:5]
-	child2 = parent2[:5]
-	child1.extend(parent2[5:])
-	child2.extend(parent1[5:])
+	return parent
+
+#Generate 2 children from 2 parents using crossover
+def gen_children(parent1, parent2, graphSize):
+	#Pass first half of respective parent
+	child1 = parent1[:randrange(1,graphSize-2)]
+	child2 = parent2[:randrange(1,graphSize-2)]
+	
+	for node in parent2:
+		if node not in child1:
+			child1.append(node)
+	for node in parent1:
+		if node not in child2:
+			child2.append(node)
+	
 	return (child1, child2)
 
-def gen_mutation(subject):
-	mutated = list(subject)
-	mutated[0] = subject[-1]
-	mutated[-1] = subject[0]
-	return mutated
+#Mutates a child through tour improvement
+def gen_mutation(tour, graph):
+	bestTour = list(tour)
+	for i in range(len(bestTour)-1):
+		tempTour= list(bestTour)
+		tempTour[i], tempTour [i+1] = bestTour[i+1], bestTour[i]
+		if (tour_length(tempTour, graph) < tour_length(bestTour, graph)):
+			bestTour = list(tempTour)
+	return bestTour
+
+#Finds the best tour of the population
+def best_tour(population, graph):
+	bestTourLength = 9999999999
+	bestTour = 0
+	for tour in population: #For each start node
+		tourLength = tour_length(tour, graph)
+		if tourLength < bestTourLength:
+			bestTour, bestTourLength = tour, tourLength
+	return (bestTour, bestTourLength)
+
