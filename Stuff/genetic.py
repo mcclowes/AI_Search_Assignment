@@ -10,7 +10,7 @@ def genetic_search(graph, graphSize):
 	population = sorted(gen_population(graph, graphSize), key = lambda x: tour_length(x, graph))
 	startTime = datetime.now() #Start timer
 
-	while (((datetime.now() - startTime).total_seconds()) < (graphSize)): #Until timer reaches n seconds (n = graphSize)
+	while (((datetime.now() - startTime).total_seconds()) < (graphSize**2)): #Until timer reaches n seconds (n = graphSize)
 		parent1 = []
 		parent2 = []
 		child1 = []

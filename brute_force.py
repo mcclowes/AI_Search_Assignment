@@ -1,15 +1,21 @@
 from itertools import permutations
 from graph_tools import tour_length
-from datetime import datetime
 
-#Brute force search method
+#Brute force method
 def brute_force_search(graph, graphSize):
-	bestTourLength = tour_length(range(1,graphSize+1), graph)
+	#Generate all permutations of tours
+	tours = list(permutations(range(1,graphSize+1), graphSize))
+
+	#Assign starting variables
+	bestTourLength = 9999999999 #Replace this!!!!
 	bestTour = 0
 
-	for tour in permutations(range(1,graphSize+1), graphSize): #Find the best tour
-		tourLength = tour_length(tour, graph)
-		if  tourLength <= bestTourLength:
-			bestTour, bestTourLength = tour, tourLength
+	#Find the best tour
+	for i in range(len(tours)): 
+		tourLength = tour_length(tours[i], graph)
+		if  tourLength < bestTourLength:
+			bestTour = i
+			bestTourLength = tourLength
 
-	return (bestTour, bestTourLength) #Return best tour length and the tour
+	#Return best tour length and the tour
+	return (tours[bestTour], bestTourLength)
