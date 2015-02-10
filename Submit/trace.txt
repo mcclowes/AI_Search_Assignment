@@ -1,17 +1,17 @@
-Fri 01/23/15  12:13:27 PM
+Fri 01/23/15  01:45:37 PM
 
 directory: pvxf29 ...
 TourfileA...
 AISearchfile012.txt: good (length of tour is 66)
-AISearchfile017.txt: good (length of tour is 2307)
-AISearchfile021.txt: good (length of tour is 4230)
+AISearchfile017.txt: good (length of tour is 2148)
+AISearchfile021.txt: good (length of tour is 4128)
 AISearchfile026.txt: good (length of tour is 1904)
-AISearchfile042.txt: good (length of tour is 2159)
-AISearchfile048.txt: good (length of tour is 34043)
-AISearchfile058.txt: good (length of tour is 89561)
-AISearchfile175.txt: good (length of tour is 44400)
-AISearchfile180.txt: good (length of tour is 665350)
-AISearchfile535.txt: good (length of tour is 148123)
+AISearchfile042.txt: good (length of tour is 2140)
+AISearchfile048.txt: good (length of tour is 33339)
+AISearchfile058.txt: good (length of tour is 81629)
+AISearchfile175.txt: good (length of tour is 44203)
+AISearchfile180.txt: good (length of tour is 659840)
+AISearchfile535.txt: good (length of tour is 147349)
 TourfileB...
 AISearchfile012.txt: good (length of tour is 56)
 AISearchfile017.txt: good (length of tour is 1628)
